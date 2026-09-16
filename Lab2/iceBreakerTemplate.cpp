@@ -17,21 +17,19 @@ int ranGen(const vector<string> & questions);
 bool readFile(string filename, vector<string> & vec);
 bool writeFile(string filename, const vector<string> & v0, const vector<string> &v1);
 
-int main()
-{
+int main(){
     srand(time(nullptr));
     vector<string> roster;
     vector<string> qBank;
     readFile("2310_F26_Rosters.csv", roster);
     readFile("Questions.csv", qBank);
-    // printVec(roster);
-    // printVec(qBank);
+    printVec(roster);
+    printVec(qBank);
 
-    // cout << "Size of roster: " << roster.size() << endl; 
-    // cout << "Size of qBank: " << qBank.size() << endl;
+    cout << "Size of roster: " << roster.size() << endl; 
+    cout << "Size of qBank: " << qBank.size() << endl;
 
     writeFile("Student_question_bank.csv",roster, qBank);
-
 }
 
 //------------------------DECLARATIONS-------------------------------------------
@@ -78,6 +76,14 @@ int ranGen(const vector<string> & questions){
     return randomNumber;
 }
 
+/**
+ * @brief reads from filename into vec
+ * 
+ * @param filename: string
+ * @param vec: vector<string> &
+ * 
+ * @return bool: true if successful, false otherwise
+ */
 bool readFile(string filename, vector<string> & vec) {
    ifstream inputFile(filename);
     //error handling
@@ -92,7 +98,15 @@ bool readFile(string filename, vector<string> & vec) {
     inputFile.close();
     return true;
 }
-
+ /**
+  * @brief writes to filename from v0 and v1
+  * 
+  * @param filename: string
+  * @param v0: vector<string> (for students names)
+  * @param v1: vector<string> (for questions)
+  * 
+  * @return bool: true if successful, false otherwise
+  */
 bool writeFile(string filename, const vector<string> & v0, const vector<string> &v1){
     ofstream outputFile(filename);
      if (!outputFile) {
