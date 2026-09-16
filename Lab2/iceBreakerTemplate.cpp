@@ -5,7 +5,8 @@
 #include <vector>
 #include <cstdlib>
 #include <ctime>
-#include <random>
+#include <random> //ranGen
+#include <string> //readFile
 
 using namespace std;
 
@@ -13,80 +14,8 @@ using namespace std;
 void promptFile(vector<string> & v); 
 void printVec(vector<string> v);
 int ranGen(const vector<string> & questions);
-
-/**
- * TO DO:
- * Use <random> for modern C++ random generation instead 
-
- */
-
-
-
-/**
- * @brief reads contents of filename and populates into vec
- * 
- * @param filename :string 
- * @param vec: vector<string> &
- * 
- * TO DO: 
- * ​​​Return a bool instead in order to indicate whether the operation
- * succeeded or not
- */
-void readFile(string filename, vector<string> & vec) {
-
-   ifstream inputFile(filename);
-
-    //error handling
-    if (!inputFile.is_open()) {
-        cerr << "Error: Could not open file\n";
-        return;
-    }
-
-    string line;
-
-    while (getline(inputFile, line)) {
-        vec.push_back(line);
-    }
-
-    inputFile.close();
-    return;
-}
-/**
- * @brief writes to filename with the first column from v0, second column from v1
- * 
- * @param filename: string
- * @param v0: vector<string> (for students names)
- * @param v1: vector<string> (for questions)
- * 
- * TO DO: 
- * ​​​Return a bool instead in order to indicate whether the operation
- * succeeded or not
- * 
- * TO DO:
- * ​​Use pass by const reference (const vector<string> & v0, const vector<string> & v1)
- * as opposed to pass by value (vector<string> v0, vector<string> v1). 
- * 
- * What is the differennce between:
- * -  pass by reference (e.g. vector<string> & v0),
- * -  pass by value (e.g. vector<string> v0),
- * -  pass by const reference (e.g. const vector<string> & v0),
- */
-void writeFile(string filename, vector<string> v0, vector<string> v1){
-
-    ofstream outputFile(filename);
-     if (!outputFile) {
-        cout << "Error: Could not create data.csv" << endl;
-    }
-
-    // write under the structure:
-    // Student_Name, Question_#
-    for(int i = 0; i < v0.size(); i++){
-        outputFile << v0[i] << "," << v1[ranGen()] << endl;
-    }
-    outputFile.close();
-
-}
-
+bool readFile(string filename, vector<string> & vec);
+bool writeFile(string filename, const vector<string> & v0, const vector<string> &v1);
 
 int main()
 {
@@ -147,4 +76,33 @@ int ranGen(const vector<string> & questions){
 
     int randomNumber = distribution(generator);
     return randomNumber;
+}
+
+bool readFile(string filename, vector<string> & vec) {
+   ifstream inputFile(filename);
+    //error handling
+    if (!inputFile.is_open()) {
+        cerr << "Error: Could not open file\n";
+        return false;
+    }
+    string line;
+    while (getline(inputFile, line)) {
+        vec.push_back(line);
+    }
+    inputFile.close();
+    return true;
+}
+
+bool writeFile(string filename, const vector<string> & v0, const vector<string> &v1){
+    ofstream outputFile(filename);
+     if (!outputFile) {
+        cout << "Error: Could not create data.csv" << endl;
+    }
+    // write under the structure:
+    // Student_Name, Question_#
+    for(int i = 0; i < v0.size(); i++){
+        outputFile << v0[i] << "," << v1[ranGen(v0)] << endl;
+    }
+    outputFile.close();
+    return true;
 }
