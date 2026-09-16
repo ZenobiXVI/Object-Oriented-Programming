@@ -1,3 +1,8 @@
+/**
+ * Setting up VS Code, Visual Studio, Github desktop, and Github
+ */
+
+
 #include <iostream>
 #include <cstdlib>
 using namespace std;

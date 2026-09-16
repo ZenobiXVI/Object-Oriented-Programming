@@ -1,25 +1,16 @@
 #include<iostream>
 #include<fstream>
 
+//Added libraries
 #include <vector>
 #include <cstdlib>
 #include <ctime>
 
 using namespace std;
 
-/**
- * TO DO: 
- * Create function prototypes for all the functions.
- * Write their function declarations below mai()).
- * 
- * See promptFile(...) and printVec(...), which serve as examples.
- * 
- */
-
-
-//------------------------PROTOTYPE-------------------------------------------
-void promptFile(vector<string> &); 
-void printVec(vector<string>);
+//Prototypes
+void promptFile(vector<string> & v); 
+void printVec(vector<string> v);
 
 /**
  * @brief randomly returns a number from 0 to 5.
