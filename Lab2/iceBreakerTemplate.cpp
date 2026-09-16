@@ -11,24 +11,20 @@ using namespace std;
 //Prototypes
 void promptFile(vector<string> & v); 
 void printVec(vector<string> v);
+int ranGen(const vector<string> & questions);
 
 /**
  * @brief randomly returns a number from 0 to 5.
  * - It is hardcoded to be from 0 to 5.
  * - Uses srand(nullptr) in main()
- * TO DO:
- * Modify it so that randGen() reads in 
- * the size of the questions instead of 6 (e.g. questions.size())
  * 
  * TO DO:
  * Use <random> for modern C++ random generation instead 
  * 
  * @return int: index of question
  */
-int ranGen(){
-    int randomNumber = rand() % 6;  // 0 through 5
-    return randomNumber;
-}
+
+
 
 /**
  * @brief reads contents of filename and populates into vec
@@ -135,4 +131,16 @@ void printVec(vector<string> v){
     for(int i = 0; i < v.size(); i++){
         cout << v[i] << endl;
     }
+}
+
+/**
+ *  @brief chooses a random number between the amount of questions
+ * 
+ * @param questions: vector<string>
+ * 
+ * @return randomNumber: int
+ */
+int ranGen(const vector<string> & questions){
+    int randomNumber = rand() % questions.size();
+    return randomNumber;
 }
