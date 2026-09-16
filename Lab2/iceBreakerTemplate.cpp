@@ -5,6 +5,7 @@
 #include <vector>
 #include <cstdlib>
 #include <ctime>
+#include <random>
 
 using namespace std;
 
@@ -14,14 +15,9 @@ void printVec(vector<string> v);
 int ranGen(const vector<string> & questions);
 
 /**
- * @brief randomly returns a number from 0 to 5.
- * - It is hardcoded to be from 0 to 5.
- * - Uses srand(nullptr) in main()
- * 
  * TO DO:
  * Use <random> for modern C++ random generation instead 
- * 
- * @return int: index of question
+
  */
 
 
@@ -141,6 +137,14 @@ void printVec(vector<string> v){
  * @return randomNumber: int
  */
 int ranGen(const vector<string> & questions){
-    int randomNumber = rand() % questions.size();
+    random_device rd;
+    mt19937 generator(rd());
+
+    int min = 0;
+    int max = questions.size();
+
+    uniform_int_distribution<int> distribution(min, max);
+
+    int randomNumber = distribution(generator);
     return randomNumber;
 }
