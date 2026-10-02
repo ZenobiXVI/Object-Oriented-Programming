@@ -16,6 +16,10 @@ int main() {
     printf("%s Current Stats \n", p2.getName().c_str());
     printf("Hits Taken: %i\t Luck: %f\t Exp: %f\t Level: %i\n", p2.getHitsTaken(), p2.getLuck(), p2.getExp(), p2.getLevel());
 
+    //calling and testing setHitsTaken
+    p2.setHitsTaken(2);
+    cout<< "\nP1 hits taken: " << p1.getHitsTaken() << endl;
+    cout<< "\nP2 hits taken: " << p2.getHitsTaken() << endl;
 
     return 0;
 }
