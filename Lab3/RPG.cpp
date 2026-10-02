@@ -49,7 +49,7 @@ int RPG::getLevel() {
  * @return false : player is unalive
  */
 bool RPG::isAlive() {
-    return hits_taken < MAX_HITS_TAKEN;
+    return hits_taken > MAX_HITS_TAKEN;
 }
 
 /**
