@@ -39,3 +39,22 @@ float RPG::getExp() {
 int RPG::getLevel() {
     return level;
 }
+
+//Mutators
+/**
+ * @brief returns whether hits_taken is less than MAX_HITS_TAKEN
+ * In other words, a player is alive as long as they have not benn hit MAX_HITS_TAKEN times.
+ * 
+ * @return true : player is alive
+ * @return false : player is unalive
+ */
+bool RPG::isAlive() {
+    return hits_taken < MAX_HITS_TAKEN;
+}
+
+/**
+ * @brief sets hit_taken to new_hits
+ */
+void RPG::setHitsTaken(int new_hits){
+    hits_taken = new_hits;
+}
