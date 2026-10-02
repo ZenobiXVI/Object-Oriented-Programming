@@ -18,3 +18,24 @@ RPG::RPG(string name, int hits_taken, float luck, float exp, int level) {
     this->exp = exp;
     this->level = level;
 }
+
+//Accessors
+string RPG::getName() {
+    return name;
+}
+
+int RPG::getHitsTaken() {
+    return hits_taken;
+}
+
+float RPG::getLuck() {
+    return luck;
+}
+
+float RPG::getExp() {
+    return exp;
+}
+
+int RPG::getLevel() {
+    return level;
+}
