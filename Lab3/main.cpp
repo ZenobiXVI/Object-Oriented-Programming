@@ -22,5 +22,10 @@ int main() {
     cout << "\nP1 hits taken: " << p1.getHitsTaken() << endl;
     cout << "\nP2 hits taken: " << p2.getHitsTaken() << endl;
 
+    //calling and testing isAlive
+    cout << "\n0 is dead, 1 is alive" << endl;
+    cout << "\nP1: " << p1.isAlive() << endl;
+    cout << "\nP2: " << p2.isAlive() << endl;
+
     return 0;
 }
