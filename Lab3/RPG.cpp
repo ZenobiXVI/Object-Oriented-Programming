@@ -4,7 +4,7 @@
 
 //Constructors
 RPG::RPG() {
-    string name ="NPC";
+    this->name = "NPC"; //"NPC" was not printing out when using string instead of the pointer
     int hits_taken = 0;
     float luck = 0.1;
     float exp = 50.0;
