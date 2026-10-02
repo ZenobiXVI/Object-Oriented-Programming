@@ -26,5 +26,13 @@ class RPG {
         float getLuck();
         float getExp();
         int getLevel();
+
+    private:
+        string name;
+        int hits_taken;
+        float luck;
+        float exp;
+        int level;
 };
+
 #endif
