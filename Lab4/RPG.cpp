@@ -1,6 +1,7 @@
 //RPG.cpp
 
 #include "RPG.h"
+#include <random>
 
 //Constructors
 RPG::RPG() {
