@@ -65,6 +65,14 @@ void Game::gameLoop() {
         battleRound();
     }
 }
+/**
+ * @brief calls printStats fpr all players
+ */
+void Game::printFinalResults() {
+    for (int i = 0; i < players.size(); i++) {
+        (* players[i]).printStats();
+    }
+}
 
 //Mutators
 /**
