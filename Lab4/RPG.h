@@ -29,13 +29,13 @@ class RPG {
         float getLuck();
         float getExp();
         int getLevel();
+        bool isAlive();
         void printStats();
 
         //mutators
-        bool isAlive();
         void setHitsTaken(int new_hits);
         void setName(string name);
-        void updateExp();
+        void updateExpLevel();
         void attack(RPG * oppenent);
 };
 

@@ -71,23 +71,13 @@ void RPG::setHitsTaken(int new_hits){
 }
 
 /**
- * @brief updates name
- * 
- * @param name
- */
-
-void RPG::setName(string name) {
-    this->name = name;
-}
-
-/**
  * @brief increase RPG's experience by 50
  *        After updating, if RPG's experience is >= 100.0, increase
  *        RPG;s level by 1, reset their experience to 0, and increase
  *        their luck by 1.0
  */
 void RPG::updateExpLevel() {
-    exp += 50;
+    exp += 50.0;
     if (exp >= 100.0) {
         level += 1;
         exp = 0;
