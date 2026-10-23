@@ -21,7 +21,7 @@ class RPG {
         //Constructor
         RPG();
         RPG(string name, int hits_taken, float luck, float exp, int level);
-        RPG();
+        ~RPG();
 
         //accessors
         string getName();

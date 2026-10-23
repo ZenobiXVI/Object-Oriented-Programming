@@ -19,6 +19,8 @@ RPG::RPG(string name, int hits_taken, float luck, float exp, int level) {
     this->level = level;
 }
 
+RPG::~RPG() {};
+
 //Accessors
 string RPG::getName() {
     return name;
@@ -45,7 +47,7 @@ int RPG::getLevel() {
  * 
  * Name: NPC_X  Hits Taken: X Luck: 0.X0000 Exp: X0.000    Level: X Status: Alive or Dead
  */
-void printStats(string name, int hits_taken, float luck, float exp, int level){
+void RPG::printStats() {
     printf("NPC_%s\tHits Taken: %i\tLuck: %u\tExp: %u\tLevel: %i\tStatus: %b", name, hits_taken, luck, exp, level);
 }
 
