@@ -3,7 +3,8 @@
 #include "Game.h"
 
 //Constructors
-
+Game::Game() {}
+Game::~Game() {}
 
 //Accessors
 /**
