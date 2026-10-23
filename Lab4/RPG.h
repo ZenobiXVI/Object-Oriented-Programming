@@ -10,14 +10,18 @@ const float HIT_FACTOR = 0.05;
 const int MAX_HITS_TAKEN = 3;
 
 class RPG {
+    private:
+        string name;
+        int hits_taken;
+        float luck;
+        float exp;
+        int level;
+
     public:
         //Constructor
         RPG();
         RPG(string name, int hits_taken, float luck, float exp, int level);
-
-        //mutators
-        bool isAlive();
-        void setHitsTaken(int new_hits);
+        RPG();
 
         //accessors
         string getName();
@@ -25,13 +29,14 @@ class RPG {
         float getLuck();
         float getExp();
         int getLevel();
+        void printStats();
 
-    private:
-        string name;
-        int hits_taken;
-        float luck;
-        float exp;
-        int level;
+        //mutators
+        bool isAlive();
+        void setHitsTaken(int new_hits);
+        void setName(string name);
+        void updateExp();
+        void attack(RPG * oppenent);
 };
 
 #endif
