@@ -106,6 +106,6 @@ void RPG::attack(RPG * opponent) {
         hit = true;
     }
     if (hit) {
-        (*opponent).updateHitsTaken();
+        (* opponent).updateHitsTaken();
     }
 }
