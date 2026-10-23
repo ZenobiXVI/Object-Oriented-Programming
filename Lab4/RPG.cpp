@@ -40,6 +40,15 @@ int RPG::getLevel() {
     return level;
 }
 
+/**
+ * @brief Prints stats of character in format:
+ * 
+ * Name: NPC_X  Hits Taken: X Luck: 0.X0000 Exp: X0.000    Level: X Status: Alive or Dead
+ */
+void printStats(string name, int hits_taken, float luck, float exp, int level){
+    printf("NPC_%s\tHits Taken: %i\tLuck: %u\tExp: %u\tLevel: %i\tStatus: %b", name, hits_taken, luck, exp, level);
+}
+
 //Mutators
 /**
  * @brief returns whether hits_taken is less than MAX_HITS_TAKEN
