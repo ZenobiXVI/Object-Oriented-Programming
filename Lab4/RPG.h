@@ -23,7 +23,7 @@ class RPG {
         RPG(string name, int hits_taken, float luck, float exp, int level);
         ~RPG();
 
-        //accessors
+        //Accessors
         string getName();
         int getHitsTaken();
         float getLuck();
@@ -32,7 +32,7 @@ class RPG {
         bool isAlive();
         void printStats();
 
-        //mutators
+        //Mutators
         void setHitsTaken(int new_hits);
         void setName(string name);
         void updateExpLevel();
