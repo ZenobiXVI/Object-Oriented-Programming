@@ -57,6 +57,14 @@ void Game::battleRound() {
         endRound(player2, player1, playerIndex1);
     }
 }
+/**
+ * @brief Runs battleRound() until there is only 1 player alive.
+ */
+void Game::gameLoop() {
+    while (live_players.size() >= 1) {
+        battleRound();
+    }
+}
 
 //Mutators
 /**
